@@ -17,7 +17,9 @@ export default function Users() {
       .then((data) => {
         setUsers(data);
       })
-      .catch((error) => console.log("Could not load users", error));
+      .catch((error) => {
+        alert(error), console.log("Could not load users", error);
+      });
   }, []);
 
   const thStyle = {
@@ -211,7 +213,7 @@ export default function Users() {
                       <td style={tdStyle}>
                         {data.firstname + " " + data.lastname}
                       </td>
-                      <td style={tdStyle}>{data.email}</td>
+                      <td style={tdStyle}>{data.email} </td>
                       <td style={tdStyle}>{data.phone || "N/A"}</td>
                       <td style={tdStyle}>{data.company.name || "N/A"}</td>
                       <td style={tdStyle}>{data.website || "N/A"}</td>
